@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                        http://www.springframework.org/schema/mvc     http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+                        http://www.springframework.org/schema/task    http://www.springframework.org/schema/task/spring-task-3.1.xsd">  
+
+    <context:property-placeholder location="file:/home/oracle/app/offline/config.properties"/>
+    <!-- Scans within the base package of the application for @Components to configure as beans -->
+    <context:component-scan base-package="com.floka.offline"/>
+    <context:annotation-config/>
+    
+    <bean id="ds"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg ref="ds"/>
+    </bean>
+<!--    <bean id="procedure" class="com.floka.offline.Procedure"/>-->
+    <bean id="task" class="com.floka.offline.App"/>
+    <task:scheduler id="sSheduler"/>
+    <task:scheduled-tasks scheduler="sSheduler">
+        <task:scheduled 
+            ref="task"
+            method="doMail"
+            fixed-delay="#{1000*60*${sh.minute}}"/>
+    </task:scheduled-tasks>
+</beans>
+
+

@@ -1,0 +1,28 @@
+10:38:21,487  INFO main support.ClassPathXmlApplicationContext:500 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1893efe: startup date [Wed Jan 09 10:38:21 YEKT 2013]; root of context hierarchy
+10:38:21,581  INFO main xml.XmlBeanDefinitionReader:315 - Loading XML bean definitions from class path resource [app-config.xml]
+10:38:21,987  INFO main annotation.ClassPathBeanDefinitionScanner:210 - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+10:38:22,206  INFO main support.PropertySourcesPlaceholderConfigurer:177 - Loading properties file from URL [file:c:/offline/config.properties]
+10:38:22,237  INFO main annotation.AutowiredAnnotationBeanPostProcessor:139 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+10:38:22,252  INFO main support.DefaultListableBeanFactory:581 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@f8f7db: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,procedure,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,ds,jdbcTemplate,task,sSheduler,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.ScheduledTaskRegistrar#0,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+10:38:22,471  INFO main datasource.DriverManagerDataSource:153 - Loaded JDBC driver: oracle.jdbc.OracleDriver
+10:38:22,596  INFO main concurrent.ThreadPoolTaskScheduler:115 - Initializing ExecutorService  'sSheduler'
+10:38:22,737  INFO sSheduler-1 offline.App:42 - doMail
+10:38:25,940  INFO sSheduler-1 offline.App:73 - [{USER_NAME=floka2002@mail.ru, ID=1}]
+10:38:25,940  INFO sSheduler-1 offline.App:80 - Обрабатываем сообщение от floka2002@mail.ru
+10:38:26,565  INFO sSheduler-1 offline.App:92 - Сообщение типа multipart/*
+10:38:26,565  INFO sSheduler-1 offline.App:98 - 123 байзакова сатимбу % %.%.%
+10:38:26,596  INFO sSheduler-1 offline.App:136 - fio ='БАЙЗАКОВА'
+10:38:26,596  INFO sSheduler-1 offline.App:137 - im  ='САТИМБУ'
+10:38:26,596  INFO sSheduler-1 offline.App:138 - ot  ='%'
+10:38:26,596  INFO sSheduler-1 offline.App:139 - dd  ='%'
+10:38:26,596  INFO sSheduler-1 offline.App:140 - mm  ='%'
+10:38:26,596  INFO sSheduler-1 offline.App:141 - yyyy='%'
+10:38:26,674  INFO sSheduler-1 offline.Procedure:48 - []
+10:38:26,705  INFO sSheduler-1 offline.Procedure:110 - []
+10:38:26,721  INFO sSheduler-1 offline.Procedure:147 - []
+10:38:26,752  INFO sSheduler-1 offline.Procedure:190 - []
+10:38:26,830  INFO sSheduler-1 offline.Procedure:234 - [{FAM=БАЙЗАКОВА, NAM=САТИМБУ, FAT=ТОПЧУБЕКОВНА, BORN_D=23, BORN_M=10, BORN_Y=1957, ID=624906}]
+10:38:26,924  INFO sSheduler-1 offline.Procedure:284 - []
+10:38:26,955  INFO sSheduler-1 offline.Procedure:312 - []
+10:38:26,971  INFO sSheduler-1 offline.Procedure:369 - []
+10:38:30,768  INFO sSheduler-1 offline.App:184 - Соединение с почтой закрыто.
